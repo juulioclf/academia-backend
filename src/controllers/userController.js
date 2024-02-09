@@ -19,7 +19,7 @@ const createUser= async (request, response) => {
 
     const userBody = request.body;
 
-    if (usersModel.getAlreadyExists(userBody.username, userBody.email).length) {
+    if (usersModel.getAlreadyExists(userBody.username, userBody.email)) {
         return response.status(400).json({ message: "User/Email already in use!"})
     }
     
