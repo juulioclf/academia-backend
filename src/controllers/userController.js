@@ -18,8 +18,9 @@ const getUserById = async (request, response) => {
 const createUser= async (request, response) => {
 
     const userBody = request.body;
+    const userExists = await usersModel.getAlreadyExists(userBody.username, userBody.email)
 
-    if (usersModel.getAlreadyExists(userBody.username, userBody.email)) {
+    if (userExists) {
         return response.status(400).json({ message: "User/Email already in use!"})
     }
     
