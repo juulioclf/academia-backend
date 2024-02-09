@@ -1,10 +1,10 @@
 const express = require('express');
+
 const usersController = require('./controllers/userController')
 const usersMiddleware = require('./middlewares/usersMiddleware')
 
 const loginController = require('./controllers/loginController')
 const loginMiddleware = require('./middlewares/loginMiddleware')
-
 
 const router = express.Router()
 
